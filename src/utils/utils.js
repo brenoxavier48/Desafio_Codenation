@@ -34,16 +34,10 @@ module.exports = {
              
     },
 
-    readAnsewr(){
-        console.log(fs.readFileSync("answer.json"))
-        return fs.readFileSync("answer.json")
-    },
-
     createFormData(){
         let form = new FormData();
-        form.append('answer', fs.readFileSync("answer.json"));
-        // console.log(fs.createReadStream('answer.json'))
-        return form;
+        form.append('answer', fs.createReadStream('answer.json'));
+        return form
     },
 
     codeSha1(frase){
